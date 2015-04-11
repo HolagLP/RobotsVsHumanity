@@ -10,11 +10,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mart.rvsh.Main;
 import com.mart.rvsh.data.ComputerChips;
 import com.mart.rvsh.data.RobotStats;
+import com.mart.rvsh.screens.GameScreen;
 
 public class Robot extends Actor{
 	Main game;
 	
-	TextureRegion region;
 	RobotStats rc = new RobotStats();
 	
 	private int x = 1050;
@@ -23,8 +23,12 @@ public class Robot extends Actor{
 	private String robotsS;
 	
 	Texture robot;
+	TextureRegion region;
 	
-	public Robot(Main game){
+	String sk = System.getProperty("line.separator");
+	
+	
+	public Robot(final Main game){
 		region = new TextureRegion();
 		this.game = game;
 	    setBounds(1050, 530, 200, 20);
@@ -57,7 +61,7 @@ public class Robot extends Actor{
 		int bx = (int) game.robotFontMedium.getBounds("Robot\n").width;
 		
 		if(Gdx.input.getX() > x && Gdx.input.getX() < bx + x && 724 - Gdx.input.getY() > y  && 704 - Gdx.input.getY() < by + y){
-			game.batch.draw(robot, 1057, y-25, 14, 31);
+			game.batch.draw(robot, 1007, y-25, 14, 31);
 		}
 		
 		game.batch.end();

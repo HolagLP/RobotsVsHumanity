@@ -9,7 +9,7 @@ public class ComputerChips {
 	
 	RobotStats rs;
 	
-	public static double computerChips = 0.0;
+	public static double computerChips = 30000.0;
 	public static double CPS = 0.0;
 	public static int finalComputerChips;
 	public static double finalCPS;
@@ -23,7 +23,9 @@ public class ComputerChips {
 		CPS = (RobotStats.robots * RobotStats.robotsCPS) 
 				+ (RobotStats.scavengers * RobotStats.scavengersCPS)
 				+ (RobotStats.stealthbots * RobotStats.stealthbotCPS)
-				+ (RobotStats.airbots * RobotStats.airbotCPS);
+				+ (RobotStats.airbots * RobotStats.airbotCPS)
+				+ (RobotStats.arachnotrons * RobotStats.arachnotronCPS)
+				+ (RobotStats.undertakers * RobotStats.undertakerCPS);
 		finalCPS = (double)Math.round((CPS *100)) /100;
 	}
 	

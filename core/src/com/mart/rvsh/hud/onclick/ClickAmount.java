@@ -25,9 +25,9 @@ public class ClickAmount {
 	}
 
 	public void render() {
-		 game.robotFontMedium.setColor(0,0,0,timepassed);
-	     game.robotFontMedium.draw(game.batch, "+" + amount, x , y + (int) (timePassed * 50));
-	     game.robotFontMedium.setColor(Color.BLACK);
+		 game.RobotMediumFont.setColor(1,1,1,timepassed);
+	     game.RobotMediumFont.draw(game.batch, "+" + amount, x , y + (int) (timePassed * 50));
+	     game.RobotMediumFont.setColor(Color.WHITE);
 	      
 	}
 }

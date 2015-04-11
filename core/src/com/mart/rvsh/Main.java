@@ -16,6 +16,9 @@ public class Main extends Game {
     public BitmapFont robotFontBig;
     public BitmapFont robotFontMedium;
     public BitmapFont robotFontSmall;
+    
+    public BitmapFont RobotBigFont;
+    public BitmapFont RobotMediumFont;
 	
 	@Override
 	public void create () {
@@ -29,13 +32,16 @@ public class Main extends Game {
         parameter2.size = 20;
         parameter3.size = 15;
         robotFontBig = generator.generateFont(parameter1); 
-        robotFontBig.setColor(Color.BLACK);
+        robotFontBig.setColor(Color.WHITE);
         robotFontMedium = generator.generateFont(parameter2); 
-        robotFontMedium.setColor(Color.BLACK);
+        robotFontMedium.setColor(Color.WHITE);
         robotFontSmall = generator.generateFont(parameter3); 
-        robotFontSmall.setColor(Color.BLACK);
+        robotFontSmall.setColor(Color.WHITE);
         generator.dispose(); 
         
+        
+        RobotMediumFont = new BitmapFont(Gdx.files.internal("fonts/RBMediumFont.fnt"), Gdx.files.internal("fonts/RBMediumFont.png"), false);
+        RobotMediumFont.setScale(1, 1);
         this.setScreen(new GameScreen(this));
         
 
@@ -43,6 +49,7 @@ public class Main extends Game {
 
 	@Override
 	public void render () {
+		Gdx.gl.glClearColor(0,0,0,1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		super.render();
 	}
